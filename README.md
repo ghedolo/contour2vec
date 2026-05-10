@@ -84,21 +84,23 @@ Built with [Claude Code](https://claude.ai/claude-code) by Anthropic.
 
 This project was developed entirely through a conversation with Claude Code.
 
-- **First session:** 2026-05-09
+- **First session:** 2026-05-05
 - **Last session:** 2026-05-10
-- **Sessions:** 2
-- **Active conversation time: ~60 minutes**
+- **Sessions:** 5, 932 messages
+- **Active conversation time: ~133 minutes (~2.2 hours)**
 
 *How active time is computed:* consecutive message timestamps are diffed; gaps ≤ 5 minutes are summed; longer gaps (breaks, hardware testing) are discarded.
 
 ### Tokens
 
+Cumulative token counts across all 5 sessions:
+
 | Metric | Tokens |
 |---|---:|
-| Input (non-cache) | — |
-| Output | — |
-| Cache write | — |
-| Cache read | — |
-| **Total** | **~TBD** |
+| Input (non-cache) | 572 |
+| Output | 164,824 |
+| Cache write | 453,347 |
+| Cache read | 12,558,956 |
+| **Total** | **~13.2 M** |
 
-*(Token counts will be filled from the session transcripts at `~/.claude/projects/.../*/jsonl`.)*
+Cache-read tokens dominate because every turn re-reads the existing context from the prompt cache. The actual output produced by the model is ~165 k tokens; new context accumulated into the cache is ~453 k tokens.
