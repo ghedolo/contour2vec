@@ -1,0 +1,10 @@
+.venv/
+.DS_Store
+tmp/
+__pycache__/
+*.pyc
+preview/logo-ccib.png
+preview/space_1.png
+img/logo-ccib.jpg
+vect/festa.txt
+vect/logo-ccib.txt
